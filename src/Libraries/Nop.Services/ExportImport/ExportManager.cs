@@ -369,6 +369,7 @@ namespace Nop.Services.ExportImport
                 new PropertyByName<ExportProductAttribute>("ColorSquaresRgb", p => p.ColorSquaresRgb),
                 new PropertyByName<ExportProductAttribute>("ImageSquaresPictureId", p => p.ImageSquaresPictureId),
                 new PropertyByName<ExportProductAttribute>("PriceAdjustment", p => p.PriceAdjustment),
+                new PropertyByName<ExportProductAttribute>("PriceAdjustmentUsePercentage", p => p.PriceAdjustmentUsePercentage),
                 new PropertyByName<ExportProductAttribute>("WeightAdjustment", p => p.WeightAdjustment),
                 new PropertyByName<ExportProductAttribute>("Cost", p => p.Cost),
                 new PropertyByName<ExportProductAttribute>("CustomerEntersQty", p => p.CustomerEntersQty),

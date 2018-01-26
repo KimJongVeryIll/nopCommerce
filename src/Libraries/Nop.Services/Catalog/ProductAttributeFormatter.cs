@@ -176,7 +176,7 @@ namespace Nop.Services.Catalog
                                 if (attributeValue.PriceAdjustmentUsePercentage)
                                 {
                                     var priceAdjustmentStr = attributeValue.PriceAdjustment.ToString("G29");
-                                    if (attributeValue.PriceAdjustment > 0)
+                                    if (attributeValue.PriceAdjustment > decimal.Zero)
                                         formattedAttribute += $" [+{priceAdjustmentStr}%]";
                                     else if (attributeValue.PriceAdjustment < decimal.Zero)
                                         formattedAttribute += $" [{priceAdjustmentStr}%]";
@@ -186,7 +186,7 @@ namespace Nop.Services.Catalog
                                     var attributeValuePriceAdjustment = _priceCalculationService.GetProductAttributeValuePriceAdjustment(attributeValue, customer);
                                     var priceAdjustmentBase = _taxService.GetProductPrice(product, attributeValuePriceAdjustment, customer, out decimal _);
                                     var priceAdjustment = _currencyService.ConvertFromPrimaryStoreCurrency(priceAdjustmentBase, _workContext.WorkingCurrency);
-                                    if (priceAdjustmentBase > 0)
+                                    if (priceAdjustmentBase > decimal.Zero)
                                         formattedAttribute += $" [+{_priceFormatter.FormatPrice(priceAdjustment, false, false)}]";
                                     else if (priceAdjustmentBase < decimal.Zero)
                                         formattedAttribute += $" [-{_priceFormatter.FormatPrice(-priceAdjustment, false, false)}]";
